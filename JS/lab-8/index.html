@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная №6 Жукова А.В.</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <table id="tbl">
+        <caption>Междугородние маршруты</caption>
+        <tbody>
+            <tr>
+                <th>№ маршрута </th>
+                <th>Название пункта отправления</th>
+                <th>Название пункта прибытия</th>
+                <th>Стоимость проезда, руб</th>
+            </tr>
+            <tr>
+                <td>453</td>
+                <td class=" city">Самара</td>
+                <td class="city">Тольятти</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>587</td>
+                <td class="city">Ульяновск</td>
+                <td class="city">Самара</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>653</td>
+                <td class="city">Уфа</td>
+                <td class="city">Самара</td>
+                <td>550</td>
+            </tr>
+            <tr>
+                <td>462</td>
+                <td class="city">Самара</td>
+                <td class="city">Уфа</td>
+                <td>550</td>
+            </tr>
+            <tr>
+                <td>567</td>
+                <td class="city">Ульяновск</td>
+                <td class="city">Уфа</td>
+                <td>450</td>
+            </tr>
+            <tr>
+                <td>634</td>
+                <td class="city">Сызрань</td>
+                <td class="city">Тольятти</td>
+                <td>300</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <form action="#">
+        <input id="path" type="text" placeholder="№ Маршрута">
+        <input id="from" type="text" placeholder="Отправление">
+        <input id="to" type="text" placeholder="Прибытие">
+        <input id="price" type="number" placeholder="Цена">
+        <br>
+        <button onclick="add()">Добавить</button>
+        <button value="Submit" onclick="change()">Изменить</button>
+        <button onclick="del()">Удалить</button>
+        <button type="reset">Очистить</button>
+    </form>
+    <script src="./main.js"></script>
+</body>
+
+</html>
