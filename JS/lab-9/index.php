@@ -8,16 +8,18 @@
 function f1(op) { 
 	Ok.setAttribute('value', op);
 	if (op == 'update') {    
-		path.setAttribute('name', 'path_Old');
-		from.setAttribute('name', 'from_Old');
-		to.setAttribute('name', 'to_Old');
-		price.setAttribute('name', 'price_Old');
-	}	
+		path_Old.setAttribute('name', 'path_Old');
+		from_Old.setAttribute('name', 'from_Old');
+		to_Old.setAttribute('name', 'to_Old');
+		price_Old.setAttribute('name', 'price_Old');
+	}
 }
 </script>
 </head>
 <body>
 <?php
+//require_once 'createTB.php';
+//require_once 'insertTB.php';
 require_once 'login.php';
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error)
@@ -31,7 +33,7 @@ else {
 
 	switch ($Ok) {
 		case 'insert':
-			$query= "INSERT INTO `Маршруты`(`№ маршрута`, `Название пункта отправления`, `Название пункта прибытия`, `Стоимость проезда, руб`) ".
+			$query= "INSERT INTO `Маршруты`(`№ маршрута`, `Название пункта отправления`, `Название пункта прибытия`, `Стоимость проезда, руб.`) ".
 					"values ('$path', '$from', '$to', '$price')";			
 			$result=$conn->query($query);
 			if (!$result)
@@ -44,21 +46,21 @@ else {
 			$price_Old = $_POST['price_Old'];
 
 			$query= "UPDATE `Маршруты` ".
-					"SET `№ маршрута`='$path', `Название пункта отправления`='$from', `Название пункта прибытия`='$to' , `Стоимость проезда, руб`='$price' ".
-					"WHERE `№ маршрута`='$path_Old' AND `Название пункта отправления`='$from_Old' AND `Название пункта прибытия`='$to_Old' AND `Стоимость проезда, руб`='$price_Old'";
+					"SET `№ маршрута`='$path', `Название пункта отправления`='$from', `Название пункта прибытия`='$to' , `Стоимость проезда, руб.`='$price' ".
+					"WHERE `№ маршрута`='$path_Old' AND `Название пункта отправления`='$from_Old' AND `Название пункта прибытия`='$to_Old' AND `Стоимость проезда, руб.`='$price_Old'";
 			$result=$conn->query($query);
 			if (!$result)
 				echo "<p>Невозможно обновить записи в таблицы \"Маршруты\" $conn->error </p>\n";
 			break;
 		case 'delete':
 			$query="DELETE FROM `Маршруты` ".
-				   "WHERE `№ маршрута`= '$path' AND `Название пункта отправления`='$from' AND `Название пункта прибытия`='$to' AND `Стоимость проезда, руб`='$price'";	   
+				   "WHERE `№ маршрута`= '$path' AND `Название пункта отправления`='$from' AND `Название пункта прибытия`='$to' AND `Стоимость проезда, руб.`='$price'";	   
 			$result=$conn->query($query);
 			if (!$result)
 				echo "<p>Невозможно удалить записи из таблицы \"Маршруты\": $conn->error </p>\n";
 	}
 
-	$query="SELECT `№ маршрута`, `Название пункта отправления`, `Название пункта прибытия`, `Стоимость проезда, руб` FROM `Маршруты`";
+	$query="SELECT `№ маршрута`, `Название пункта отправления`, `Название пункта прибытия`, `Стоимость проезда, руб.` FROM `Маршруты`";
 	$result=$conn->query($query);
 	if (!$result)
 		echo "<p>Невозможно просмотреть записи из таблицы \"Маршруты\": $conn->error </p>\n";
@@ -66,7 +68,7 @@ else {
 		echo "<table id='tbl' cellspacing='0' cellpadding='8' border='1'>\n";
 		echo "\t<caption>Междугородние маршруты</caption>\n";
 		echo "\t<tbody style='text-align:center'>\n";	 
-		echo "\t\t<tr><th>№ маршрута</th><th>Название пункта отправления</th><th>Название пункта прибытия</th><th>Стоимость проезда, руб</th></tr>\n";
+		echo "\t\t<tr><th>№ маршрута</th><th>Название пункта отправления</th><th>Название пункта прибытия</th><th>Стоимость проезда, руб.</th></tr>\n";
 		while ($row=$result->fetch_array(MYSQLI_NUM)) {
 			echo "\t\t<tr><td>$row[0]</td><td class='stL'>$row[1]</td><td class='stL'>$row[2]</td><td>$row[3]</td></tr>\n";
 		}
@@ -98,23 +100,19 @@ else {
 			<td><input id="to" name="to" size=30 maxlength=40 placeholder="Марусино" required></td>
 		</tr>
 		<tr>
-			<th class="stR"><label for="price">Стоимость проезда, руб</label></th>
+			<th class="stR"><label for="price">Стоимость проезда, руб.</label></th>
 			<td><input id="price" name="price" size=4 maxlength=4 placeholder="777" required></td>
 		</tr>
 		<tr>
 			<th class="stR"><input type="submit" value="Создать новую запись" onclick="f1('insert')"></th>
 			<td><input type="submit" value="Изменить выбранную запись" onclick="f1('update')"></td>
 		</tr>
-		<tr>
-			<th class="stR"><input type="submit" value="Создать новую запись" onclick="f1('insert')"></th>
-			<td><input type="submit" value="Изменить выбранную запись" onclick="f1('update')"></td>
-		</tr>
 		<tr>		
-			<th class="stR"><input type="reset" value="Очистить Стоимость проезда, рубя формы"></th>
+			<th class="stR"><input type="reset" value="Очистить поля формы"></th>
 			<td><input type="submit" value="Удалить выбранную запись" onclick="f1('delete')"></td>
 		</tr>	
 	</table>
 </form>
-<script src="./main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
