@@ -1,19 +1,38 @@
-.intro{
-    padding: 20px ;
-}
-.intro__btn{
-    background-color:thistle;
-    border-radius: 25px;
-    border: 1px solid white;
-    
-}
-.intro__btn:hover{
-    background-color:antiquewhite;
-    
+.intro {
+    padding: 20px;
 }
 
-.form{
+.intro__btn {
+    background-color: thistle;
+    border-radius: 25px;
+    border: 1px solid white;
+
+}
+
+.intro__btn:hover {
+    background-color: antiquewhite;
+
+}
+
+.form {
     display: flex;
     gap: 30px;
-    
+
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+
+}
+
+
+
+td {
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px;
 }
