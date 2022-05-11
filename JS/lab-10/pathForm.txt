@@ -23,7 +23,7 @@
 <span>Стоимость проезда руб.
     <input type="number" name="price" id="price" step="10" min="100" max="1200" value="300">
 </span> 
-<input type="button" name="go" id="go" onclick="validateFrom()" value="Поехали">
+<input type="button" name="go" id="go" onclick="validateForm()" value="Поехали">
 </form>
 
     

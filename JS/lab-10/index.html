@@ -31,23 +31,25 @@
         function validateForm() {
             var p = Number.parseInt(document.getElementById("path").value);
             if (isNaN(p) | (p < 100) | (p > 900)) {
-                alert("№ маршрута должен быть  целым числом из диапазона от 1000 до 9000 включительно");
+                alert("№ маршрута должен быть  целым числом из диапазона от 100 до 900 включительно");
                 return;
             }
 
-            var from = document.getElementsByName('from')
+            var from = document.getElementsByName('from');
+            console.log(from);
 
-            var to = document.getElementById('to')
-            for (let i = 0; i < from.length; i++) {
-                if (from[i].checked.value == to.value) {
-                    alert("И куда ты поехал?")
+            var to = document.getElementById('to');
+
+            for (var i = 0; i < from.length; i++) {
+                if (from[i].checked && from[i].value == to.value) {
+                    alert("И куда ты поехал?");
                     return;
                 }
 
             }
-            let price = Number.parseInt(document.getElementById('price').value)
+            var price = Number.parseInt(document.getElementById('price').value)
             if (isNaN(price) | (price < 100) | (price > 1200)) {
-                alert("Неверная цена");
+                alert("Стоимость маршрута должна быть целым числом из диапазона от 100 до 1200 включительно");
                 return;
             }
         }
