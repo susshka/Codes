@@ -1,0 +1,29 @@
+<form class="form" method="get">
+    <input type="number" name="path" id="path" placeholder="№ маршрута" maxlength="3" min="100" max="1200" >
+        <span id="from" class="from">   
+        Название пункта отправления :
+       <input type="radio" name="from" id="S" value="Самара">
+       <label for="S" title="Самара">С</label>
+       <input type="radio" name="from" id="U" value="Ульяновск">
+       <label for="U" title="Ульяновск">У</label>
+       <input type="radio" name="from" id="F" value="Уфа" checked>
+       <label for="F" title="Уфа">Ф</label>
+       <input type="radio" name="from" id="I" value="Сызрань">
+       <label for="I" title="Сызрань">Ы</label>
+   </span>
+    <span>
+        Название пункта прибытия
+        <select name="to" id="to">
+        <option>Пункт прибытия</option>
+        <option>Тольятти</option>
+        <option>Самара</option>
+        <option>Уфа</option>
+    </select>
+</span>      
+<span>Стоимость проезда руб.
+    <input type="number" name="price" id="price" step="10" min="100" max="1200" value="300">
+</span> 
+<input type="button" name="go" id="go" onclick="validateFrom()" value="Поехали">
+</form>
+
+    
