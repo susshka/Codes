@@ -1,0 +1,128 @@
+/* PAGE */
+
+body {
+    /* background-image: url(https://media.www.kent.ac.uk/se/25884/made-in-kent_2000w.jpg); */
+
+}
+
+
+
+li {
+    list-style: none;
+}
+
+/* HEADER ////////////////////////////////////////////////////////////////////////////*/
+header {
+
+    display: flex;
+    color: rgb(17, 13, 13);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav__item {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav__item:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+}
+
+.adress {
+    text-decoration: none;
+    color: rgb(59, 55, 55);
+}
+
+.adress__icon {
+    width: 20px;
+}
+
+.info {
+    padding-left: 110px;
+    ;
+}
+
+.info_list {
+    color: rgb(59, 55, 55);
+}
+
+
+
+
+/* MAIN ////////////////////////////////////////////////////////////////////////////*/
+main {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 100px;
+    justify-content: space-between;
+    padding-bottom: 200px;
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+th {
+    padding: 5px;
+}
+
+.vid {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    position: absolute;
+    width: 1000px;
+    object-fit: cover;
+}
+
+.mask {
+    position: absolute;
+    width: 1000px;
+    z-index: 2;
+    user-select: none;
+    mix-blend-mode: screen;
+}
+
+/* ASIDE ////////////////////////////////////////////////////////////////////////////*/
+aside {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    padding-top: 400px;
+}
+
+/* FOOTER ////////////////////////////////////////////////////////////////////////////*/
+footer {
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    text-align: center;
+    color: azure;
+    padding: 10px 0;
+}
