@@ -1,9 +1,6 @@
 /* PAGE */
 
-body {
-    /* background-image: url(https://media.www.kent.ac.uk/se/25884/made-in-kent_2000w.jpg); */
 
-}
 
 
 
@@ -68,9 +65,9 @@ header {
 /* MAIN ////////////////////////////////////////////////////////////////////////////*/
 main {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     padding-left: 20px;
-    padding-right: 100px;
+    padding-right: 50px;
     justify-content: space-between;
     padding-bottom: 200px;
 }
@@ -79,33 +76,47 @@ table,
 td,
 th {
     border: 1px solid black;
+    float: center;
 }
 
 th {
     padding: 5px;
 }
 
+section {
+    padding-top: 200px;
+}
+
 .vid {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
+    max-width: 45%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.vb {
+    float: center;
 }
 
 video {
     position: absolute;
-    width: 1000px;
+    width: 100%;
     object-fit: cover;
 }
 
 .mask {
     position: absolute;
-    width: 1000px;
+    width: 100%;
     z-index: 2;
     user-select: none;
     mix-blend-mode: screen;
+}
+
+article {
+    float: center;
+    padding-right: 10px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ASIDE ////////////////////////////////////////////////////////////////////////////*/
@@ -114,8 +125,21 @@ aside {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 10px;
     padding: 20px;
-    padding-top: 400px;
+    padding-top: 200px;
+}
+
+form {
+    float: center;
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    float: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* FOOTER ////////////////////////////////////////////////////////////////////////////*/
@@ -125,4 +149,7 @@ footer {
     text-align: center;
     color: azure;
     padding: 10px 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }

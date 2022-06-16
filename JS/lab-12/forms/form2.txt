@@ -1,0 +1,4 @@
+<div>
+            <button onclick="getDate('selectOtchSHK.php','tables')">Показать отчет для Школьники</button>
+            <button onclick="getDate('selectOtchSHK1.php','tables')">Показать отчет для Школьники1</button>
+</div>

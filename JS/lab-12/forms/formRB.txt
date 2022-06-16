@@ -1,0 +1,16 @@
+<form method="post">
+            <input type="hidden" id="Ok" name="Ok">
+            <input type="hidden" id="tblName" name="tblName">
+            <input type="hidden" id="one_Old" name="one_Old">
+            <input type="hidden" id="two_Old" name="two_Old">
+            <input type="hidden" id="tree_Old" name="tree_Old">
+            <input type="hidden" id="four_Old" name="four_Old">
+
+            <input name="one" id="one" placeholder="Табельный номер" required>
+            <input name="two" id="two" placeholder="ФИО учителя" required>
+            <input name="tree" id="tree" placeholder="Должность/профессия" required>
+            <input name="four" id="four"placeholder="Пол" required>
+            <button onclick="f1('insert')">Добавить выбранную запись</button>
+            <button onclick="f1('update')">Изменить выбранную запись</button>
+            <button onclick="f1('delete')">Удалить выбранную запись</button>
+</form>

@@ -1,0 +1,19 @@
+.intro{
+    padding: 20px ;
+}
+.intro__btn{
+    background-color:thistle;
+    border-radius: 25px;
+    border: 1px solid white;
+    
+}
+.intro__btn:hover{
+    background-color:antiquewhite;
+    
+}
+
+.form{
+    display: flex;
+    gap: 30px;
+    
+}
